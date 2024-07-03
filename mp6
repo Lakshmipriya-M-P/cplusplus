@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+
+class Player {
+private:
+    int _number;
+    std::string _name;
+
+public:
+    Player(int number, std::string name) : _number(number), _name(name) {}
+
+    int getNumber() const {
+        return _number;
+    }
+
+    std::string getName() const {
+        return _name;
+    }
+
+    void setNumber(int number) {
+        _number = number;
+    }
+
+    void setName(std::string name) {
+        _name = name;
+    }
+
+    friend std::ostream& operator<<(std::ostream& os, const Player& player) {
+        os << player._number << " " << player._name;
+        return os;
+    }
+};
